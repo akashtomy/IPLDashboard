@@ -101,7 +101,7 @@ public class BatchConfig {
     @Bean
     public Step step1(JdbcBatchItemWriter<Match> writer) {
         return stepBuilderFactory.get("step1")
-                .<MatchInputs, Match> chunk(10)
+                .<MatchInputs, Match>chunk(10)
                 .reader(reader())
                 .processor(processor())
                 .writer(writer)
